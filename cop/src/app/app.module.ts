@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 
 import { ApiModule as CompanyApiModule } from './api/company/api.module';
 import { CompanyModule } from './company/company.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
     CompanyApiModule.forRoot({rootUrl: 'https://m4vjv.mocklab.io'}),
 
   ],
-  providers: [],
+  providers: [
+    {
+     provide: HTTP_INTERCEPTORS,
+     useClass: InterceptorService,
+     multi: true
+    }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
