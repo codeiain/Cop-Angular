@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     CompanyModule,
     HttpClientModule,
-    CompanyApiModule.forRoot({rootUrl: 'https://m4vjv.mocklab.io/'}),
+    CompanyApiModule.forRoot({rootUrl: 'https://m4vjv.mocklab.io'}),
 
   ],
   providers: [],
