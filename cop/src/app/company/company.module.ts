@@ -25,5 +25,10 @@ import { CompanyResolverService } from './services/company-reslover.service';
     CompanyListResolverService,
     CompanyResolverService,
   ],
+  exports: [
+    CompanyListComponent,
+    CompanyViewComponent,
+    CompanyAddEditComponent
+  ]
 })
-export class CompanyModule {}
+export class CompanyModule { }
